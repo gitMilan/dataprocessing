@@ -1,0 +1,52 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+all                   1              1              1
+quantify_genes        2              1              1
+total                 3              1              1
+
+Select jobs to execute...
+
+[Tue Sep 20 11:49:35 2022]
+rule quantify_genes:
+    input: data/genome.fa, data/Sample2.R1.fastq.gz, data/Sample2.R2.fastq.gz
+    output: results/Sample2.txt
+    jobid: 2
+    reason: Missing output files: results/Sample2.txt
+    wildcards: sample=Sample2
+    resources: tmpdir=/tmp
+
+[Tue Sep 20 11:49:35 2022]
+Finished job 2.
+1 of 3 steps (33%) done
+Select jobs to execute...
+
+[Tue Sep 20 11:49:35 2022]
+rule quantify_genes:
+    input: data/genome.fa, data/Sample1.R1.fastq.gz, data/Sample1.R2.fastq.gz
+    output: results/Sample1.txt
+    jobid: 1
+    reason: Missing output files: results/Sample1.txt
+    wildcards: sample=Sample1
+    resources: tmpdir=/tmp
+
+[Tue Sep 20 11:49:35 2022]
+Finished job 1.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Tue Sep 20 11:49:35 2022]
+localrule all:
+    input: results/Sample1.txt, results/Sample2.txt
+    jobid: 0
+    reason: Input files updated by another job: results/Sample2.txt, results/Sample1.txt
+    resources: tmpdir=/tmp
+
+[Tue Sep 20 11:49:35 2022]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2022-09-20T114935.720408.snakemake.log

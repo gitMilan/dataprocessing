@@ -1,0 +1,3 @@
+quantified/Sample1 data/genome.fa data/Sample1.R1.fastq.gz data/Sample1.R2.fastq.gz
+quantified/Sample2 data/genome.fa data/Sample2.R1.fastq.gz data/Sample2.R2.fastq.gz
+quantified/Sample3 data/genome.fa data/Sample3.R1.fastq.gz data/Sample3.R2.fastq.gz

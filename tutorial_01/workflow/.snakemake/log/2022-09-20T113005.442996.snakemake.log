@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+all                   1              1              1
+quantify_genes        1              1              1
+total                 2              1              1
+
+Select jobs to execute...
+
+[Tue Sep 20 11:30:05 2022]
+rule quantify_genes:
+    input: data/r1.txt
+    output: results/Sample1.txt
+    jobid: 1
+    reason: Code has changed since last execution
+    wildcards: sample=Sample1
+    resources: tmpdir=/tmp
+
+[Tue Sep 20 11:30:05 2022]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Tue Sep 20 11:30:05 2022]
+localrule all:
+    input: results/Sample1.txt
+    jobid: 0
+    reason: Input files updated by another job: results/Sample1.txt
+    resources: tmpdir=/tmp
+
+[Tue Sep 20 11:30:05 2022]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2022-09-20T113005.442996.snakemake.log

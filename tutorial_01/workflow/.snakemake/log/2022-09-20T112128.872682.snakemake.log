@@ -1,0 +1,9 @@
+Building DAG of jobs...
+MissingInputException in rule quantify_genes in line 7 of /home/milan/Documents/school/dataprocessing/tutorial_01/workflow/main.smk:
+Missing input files for rule quantify_genes:
+    output: results/Sample1.txt
+    wildcards: sample=Sample1
+    affected files:
+        data/Sample1.R1.fastq.gz
+        data/genome.fa
+        data/Sample1.R2.fastq.gz

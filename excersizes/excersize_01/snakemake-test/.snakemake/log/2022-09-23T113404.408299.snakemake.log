@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule quantify_genes in line 7 of /home/milan/Documents/school/dataprocessing/excersizes/excersize_01/snakemake-test/Snakefile:
+Missing input files for rule quantify_genes:
+    output: results/Sample3.txt
+    wildcards: sample=Sample3
+    affected files:
+        data/Sample3.R2.fastq.gz
+        data/Sample3.R1.fastq.gz

@@ -1,0 +1,16 @@
+23 sept
+continue working on 01 introduction: pipeline basics 'adding another rule'
+done!
+
+DAG file
+Directed Acyclic graph
+snakemake --forceall --dag | dot -Tpng > dag.png
+
+Run snakemake
+snakemake --snakefile <nameofsnakefile>
+
+Add rule clean
+
+delete all output
+snakemake --delete-all-output --cores <n cores>
+
