@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule bwa_map in line 1 of /home/milan/Documents/school/dataprocessing/excersizes/tutorial_02/Snakefile:
+Missing input files for rule bwa_map:
+    output: mapped_reads/A.bam
+    affected files:
+        data/genome.fa
+        data/samples/A.fastq

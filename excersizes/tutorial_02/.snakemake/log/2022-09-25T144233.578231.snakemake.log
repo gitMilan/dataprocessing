@@ -1,0 +1,106 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job              count    min threads    max threads
+-------------  -------  -------------  -------------
+all                  1              1              1
+bcftools_call        1              1              1
+bwa_map              3              1              1
+samtools_sort        3              1              1
+total                8              1              1
+
+Select jobs to execute...
+
+[Sun Sep 25 14:42:33 2022]
+Job 3: executing bwa mem on the following data/genome.fa data/samples/A.fastq to generate the following mapped_reads/A.bam
+Reason: Missing output files: mapped_reads/A.bam
+
+
+[Sun Sep 25 14:42:33 2022]
+Job 5: executing bwa mem on the following data/genome.fa data/samples/B.fastq to generate the following mapped_reads/B.bam
+Reason: Missing output files: mapped_reads/B.bam
+
+
+[Sun Sep 25 14:42:33 2022]
+Job 7: executing bwa mem on the following data/genome.fa data/samples/C.fastq to generate the following mapped_reads/C.bam
+Reason: Missing output files: mapped_reads/C.bam
+
+[Sun Sep 25 14:42:34 2022]
+Finished job 3.
+1 of 8 steps (12%) done
+Select jobs to execute...
+
+[Sun Sep 25 14:42:34 2022]
+rule samtools_sort:
+    input: mapped_reads/A.bam
+    output: sorted_reads/A.bam
+    jobid: 2
+    reason: Missing output files: sorted_reads/A.bam; Input files updated by another job: mapped_reads/A.bam
+    wildcards: sample=A
+    resources: tmpdir=/tmp
+
+[Sun Sep 25 14:42:35 2022]
+Finished job 7.
+2 of 8 steps (25%) done
+Select jobs to execute...
+
+[Sun Sep 25 14:42:35 2022]
+rule samtools_sort:
+    input: mapped_reads/C.bam
+    output: sorted_reads/C.bam
+    jobid: 6
+    reason: Missing output files: sorted_reads/C.bam; Input files updated by another job: mapped_reads/C.bam
+    wildcards: sample=C
+    resources: tmpdir=/tmp
+
+[Sun Sep 25 14:42:35 2022]
+Finished job 2.
+3 of 8 steps (38%) done
+[Sun Sep 25 14:42:35 2022]
+Finished job 6.
+4 of 8 steps (50%) done
+[Sun Sep 25 14:42:35 2022]
+Finished job 5.
+5 of 8 steps (62%) done
+Select jobs to execute...
+
+[Sun Sep 25 14:42:35 2022]
+rule samtools_sort:
+    input: mapped_reads/B.bam
+    output: sorted_reads/B.bam
+    jobid: 4
+    reason: Missing output files: sorted_reads/B.bam; Input files updated by another job: mapped_reads/B.bam
+    wildcards: sample=B
+    resources: tmpdir=/tmp
+
+[Sun Sep 25 14:42:35 2022]
+Finished job 4.
+6 of 8 steps (75%) done
+Select jobs to execute...
+
+[Sun Sep 25 14:42:35 2022]
+rule bcftools_call:
+    input: data/genome.fa, sorted_reads/A.bam, sorted_reads/B.bam, sorted_reads/C.bam, sorted_reads/A.bam.bai, sorted_reads/B.bam.bai, sorted_reads/C.bam.bai
+    output: calls/all.vcf
+    jobid: 1
+    reason: Missing output files: calls/all.vcf; Input files updated by another job: sorted_reads/B.bam, sorted_reads/C.bam, sorted_reads/A.bam
+    resources: tmpdir=/tmp
+
+[Sun Sep 25 14:42:36 2022]
+Finished job 1.
+7 of 8 steps (88%) done
+Select jobs to execute...
+
+[Sun Sep 25 14:42:36 2022]
+localrule all:
+    input: calls/all.vcf
+    jobid: 0
+    reason: Input files updated by another job: calls/all.vcf
+    resources: tmpdir=/tmp
+
+[Sun Sep 25 14:42:36 2022]
+Finished job 0.
+8 of 8 steps (100%) done
+Complete log: .snakemake/log/2022-09-25T144233.578231.snakemake.log

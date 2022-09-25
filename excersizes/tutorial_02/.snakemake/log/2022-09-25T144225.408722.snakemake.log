@@ -1,0 +1,8 @@
+Building DAG of jobs...
+Deleting calls/all.vcf
+Deleting sorted_reads/A.bam
+Deleting mapped_reads/A.bam
+Deleting sorted_reads/B.bam
+Deleting mapped_reads/B.bam
+Deleting sorted_reads/C.bam
+Deleting mapped_reads/C.bam

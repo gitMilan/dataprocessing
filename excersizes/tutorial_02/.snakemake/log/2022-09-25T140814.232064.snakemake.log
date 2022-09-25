@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule samtools_index in line 26 of /home/milan/Documents/school/dataprocessing/excersizes/tutorial_02/Snakefile:
+Missing input files for rule samtools_index:
+    output: sorted_reads/{sample}.bam.bai
+    wildcards: sample={sample}
+    affected files:
+        sorted_reads/{sample.bam}

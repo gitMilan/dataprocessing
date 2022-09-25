@@ -1,0 +1,3 @@
+WildcardErrorin line 42 of /home/milan/Documents/school/dataprocessing/excersizes/tutorial_02/Snakefile:
+No values given for wildcard 'sample'.
+  File "/home/milan/Documents/school/dataprocessing/excersizes/tutorial_02/Snakefile", line 42, in <module>
