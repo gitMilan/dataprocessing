@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule bwa_allign1 in line 18 of /home/milan/Documents/school/dataprocessing/excersizes/tutorial_04/end_to_end.smk:
+Missing input files for rule bwa_allign1:
+    output: temp/out.sai
+    affected files:
+        reads.txt

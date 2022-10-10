@@ -1,0 +1,6 @@
+Building DAG of jobs...
+MissingInputException in rule make_histogram in line 8 of /home/milan/Documents/school/dataprocessing/excersizes/tutorial_04/Snakefile:
+Missing input files for rule make_histogram:
+    output: result/histogram.jpg
+    affected files:
+        /commons/Themas/Thema11/Dataprocessing/WC04/data/out.csv

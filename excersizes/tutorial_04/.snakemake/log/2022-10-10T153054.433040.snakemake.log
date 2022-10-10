@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+bwa_allign1        1              1              1
+total              2              1              1
+
+Select jobs to execute...
+
+[Mon Oct 10 15:30:54 2022]
+rule bwa_allign1:
+    input: bwa_index.done, data/reference.fa, data/A.txt
+    output: temp/out.sai
+    jobid: 1
+    reason: Missing output files: temp/out.sai
+    resources: tmpdir=/tmp
+
+[Mon Oct 10 15:30:54 2022]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Mon Oct 10 15:30:54 2022]
+localrule all:
+    input: temp/out.sai
+    jobid: 0
+    reason: Input files updated by another job: temp/out.sai
+    resources: tmpdir=/tmp
+
+[Mon Oct 10 15:30:54 2022]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2022-10-10T153054.433040.snakemake.log

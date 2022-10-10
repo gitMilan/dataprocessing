@@ -1,0 +1,24 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+all                   1              1              1
+make_histogram        1              1              1
+total                 2              1              1
+
+Select jobs to execute...
+
+[Mon Oct 10 13:28:01 2022]
+rule make_histogram:
+    input: data/out.csv
+    output: result/histogram.jpg
+    jobid: 1
+    reason: Missing output files: result/histogram.jpg
+    resources: tmpdir=/tmp
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-10-10T132800.983532.snakemake.log

@@ -1,0 +1,5 @@
+#configfile config.yaml
+reference: data/reference.fa
+samples:
+  A : data/A.txt
+  B : data/B.txt
